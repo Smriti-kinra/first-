@@ -1,0 +1,49 @@
+print("------------------------🔖 DICTious 🔖-----------------------\n\n\t\t    DICTIONARY RANKINGS\n")
+cont='yes'
+while cont.lower() in ("yes","yoo","yo","yeahh","ofcourse","ofc","yeah","y","yea"):
+    print('='*62)
+    wor=input('🔖\n\n  Enter a word whose rank you wanna know🧐:) ')
+    word=list(wor.lower())
+    while word:
+        rank=1
+        for i in range(len(word)):
+            b=1
+            n=0
+            l=[]
+            r=len(word)-i-1
+            for j in range(i+1,len(word)):
+                if ord(word[i])>ord(word[j]):
+                    n+=1
+            for x in range(i,len(word)):
+                a=d=1
+                wordd=word[x:len(word)]
+                c=0
+                if word[x] not in l:
+                    c=wordd.count(word[x])
+                    l.append(word[x])
+                for y in range(1,c+1):
+                    d*=y
+                b*=d
+            for k in range(1,r+1):
+                a*=k
+            rank+=(a*n/b)
+        print('-'*62)
+        print(wor,"\'s rank in its dictionary is :  ",int(rank))
+        while True:
+            cont=input('\n\n  Do you want to know more?! ')
+            if cont.lower() in ['n','no','nope','nehh',"neh","no thanks","yes","yoo","yo","yeahh","ofcourse","ofc","yeah","y","yea"]:
+                break
+            else:
+                print('.'*62)
+                print("Sorry I did not catch that\nPlease write properly")
+                print('.'*62)
+                continue
+        break
+    else:
+        print('.'*62)
+        print("WRONG CHOICE BRUH")
+        print('.'*62)
+        continue
+else:
+    print('\n\t\t\t~ THANKYOU ~\n')
+print('='*62)
